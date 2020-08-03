@@ -69,5 +69,23 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 100개 이하의 아주 작은 데이터인 경우 데이터 수만큼의 모델을 만드는데 각 모델은 하나의 샘플만 제외하고 모델을 만들고 제외한 샘플로 성능 계산, 도출된 n개의 성능 지표의 평균을 최종 성능 지표를 도출하는 방법.(의료정보 분석등..)   
 ![loocv](https://user-images.githubusercontent.com/18206655/89173785-c0e62700-d5bf-11ea-94bd-6ef53211de6f.jpg)   
 
+### Neural Network   
+뇌의 학습 방법을 수학적으로 모델링하는 기계학습 알고리즘으로써, 시냅스의 결합으로 네트워크를 형성한 신경세포가 학습을 통해 시냅스의 세기를 변화시켜 문제를 해결하는 모델.   
+
+### Deep Learning   
+입력과 출력 사이에 있는 인공 뉴런들을 여러 개로 층층이 쌓고 연결한 인공신경망 기법을 다루는 연구   
+![ANN](https://user-images.githubusercontent.com/18206655/89174065-3651f780-d5c0-11ea-86ea-019e0bc9cfc0.jpg)   
+
+### ML(Machine Learning) vs. DL(Deep Learning)     
+* ML: Input -> Feature extraction(made by human) ->  Classification -> Output
+* DL: Input -> Feature extraction + Classification -> Output   
+
+#### Backpropagation   
+Supervised Learning 기반에서 신경망을 학습시키는 방법으로 최적화의 계산 방향이 출력층에서 시작하여 앞으로 진행하는 방법.   
+![backpropagation](https://user-images.githubusercontent.com/18206655/89175110-0a377600-d5c2-11ea-80b7-f0a7bd4850cb.jpg)
+Link: [Backpropagation][link]   
+[link]: https://sebastianraschka.com/faq/docs/visual-backpropagation.html   
+
+
 
 
