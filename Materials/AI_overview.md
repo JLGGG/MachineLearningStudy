@@ -40,7 +40,7 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 4. 매개변수 조정
 5. 머신러닝 모델 학습
 6. 머신러닝 모델 개발   
-3~5 과정이 데이터 학습 과정이다.
+3~5 과정이 데이터 학습 과정이다. 머신러닝 모델을 개발하고 학습하는 시간보다 데이터를 전처리하는데 훨씬 더 많은 시간이 소요된다.
 
 ### 머신러닝 모델 활용 단계   
 실제 데이터와 개발된 머신러닝 모델을 실행해서 분류/결과값 도출 or 예측결과를 도출한다.
@@ -77,7 +77,7 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 ![ANN](https://user-images.githubusercontent.com/18206655/89174065-3651f780-d5c0-11ea-86ea-019e0bc9cfc0.jpg)   
 
 ### ML(Machine Learning) vs. DL(Deep Learning)     
-* ML: Input -> Feature extraction(made by human) ->  Classification -> Output
+* ML: Input -> Feature extraction(executed by human) ->  Classification -> Output
 * DL: Input -> Feature extraction + Classification -> Output   
 
 #### Backpropagation   
