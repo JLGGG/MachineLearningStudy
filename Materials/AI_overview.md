@@ -82,8 +82,13 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 
 #### Backpropagation   
 Supervised Learning 기반에서 신경망을 학습시키는 방법으로 최적화의 계산 방향이 출력층에서 시작하여 앞으로 진행하는 방법.   
-![backpropagation](https://user-images.githubusercontent.com/18206655/89175110-0a377600-d5c2-11ea-80b7-f0a7bd4850cb.jpg)
-[link]: https://sebastianraschka.com/faq/docs/visual-backpropagation.html   
+![backpropagation](https://user-images.githubusercontent.com/18206655/89175110-0a377600-d5c2-11ea-80b7-f0a7bd4850cb.jpg)   
+[Reference link]: https://sebastianraschka.com/faq/docs/visual-backpropagation.html   
+
+#### Gradient descent   
+오차의 최소값 위치를 찾기 위해 Cost Function의 gradient 반대 방향으로 정의한 step size를 가지고 조금씩 움직여 가면서 최적의 parameter(weight)를 찾는 최적화 알고리즘.   
+
+
 
 
 
