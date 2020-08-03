@@ -21,5 +21,5 @@ AI가 ML(Machine Learning)을 포함하고, ML이 DL(Deep Learning)을 포함한
 General Programming은 input으로 data, program을 입력하고 그것에 대한 output을 출력하지만, ML에서는 input으로 data, output을 입력하고 그것에 대한output으로 program(model)을 출력한다.   
 
 ### 머신러닝의 3대 원리
-* Occam's Razor
+* Occam's Razor   
   같은 현상을 설명하는 두가지 모형이 있다면, 단순한 모형을 선택("All things being equal, the simplest solution tends to be the best one.")
