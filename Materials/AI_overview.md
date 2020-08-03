@@ -83,7 +83,6 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 #### Backpropagation   
 Supervised Learning 기반에서 신경망을 학습시키는 방법으로 최적화의 계산 방향이 출력층에서 시작하여 앞으로 진행하는 방법.   
 ![backpropagation](https://user-images.githubusercontent.com/18206655/89175110-0a377600-d5c2-11ea-80b7-f0a7bd4850cb.jpg)
-Link: [Backpropagation][link]   
 [link]: https://sebastianraschka.com/faq/docs/visual-backpropagation.html   
 
 
