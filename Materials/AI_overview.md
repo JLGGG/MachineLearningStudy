@@ -23,3 +23,23 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 ### 머신러닝의 3대 원리
 * Occam's Razor   
   같은 현상을 설명하는 두가지 모형이 있다면, 단순한 모형을 선택("All things being equal, the simplest solution tends to be the best one.")
+* Sampling Bias
+  모집단을 대표성의 원리에 따라 표본을 추출하지 못할 때 기계학습 알고리즘도 편향된 표본을 학습하여 결과를 왜곡시킴
+* Data Snooping Bias
+  데이터를 본 후 기계학습 알고리즘을 결정하는 것으로 기계학습 알고리즘은 데이터를 보기 전에 선정해야 함.   
+
+### 머신러닝 분류   
+* Supervised Learning : Regression, Classification
+* Unsupervised Learning : Clustering(Ex. K-means...)
+* Reinforcement Learning : Algorithm learns to react to an environment.
+
+### 머신러닝 모델 개발 단계   
+1. 데이터 수집과정
+2. 데이터 가공과정
+3. 데이터 학습 방법 선택
+4. 매개변수 조정
+5. 머신러닝 모델 학습
+6. 머신러닝 모델 개발
+3~5 과정이 데이터 학습 과정이다.
+
+
