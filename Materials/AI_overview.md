@@ -51,7 +51,8 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 ![cod](https://user-images.githubusercontent.com/18206655/89172882-5385c680-d5be-11ea-87df-eb9b3419a1e6.jpg)
 
 #### Overfitting and Underfitting   
-* Overfitting : 정확한 결과를 얻기 위해 학습데이터의 잡음까지 학습하여 훈련데이터에 최적화되어 있지만 일반화하지 못한 모델
+* Overfitting : 정확한 결과를 얻기 위해 학습데이터의 잡음까지 학습하여 훈련데이터에 최적화되어 있지만 일반화하지 못한 모델.   
+Overfitting 하지 못하도록 Dropout(0.5) 함수를 사용한다. 랜덤하게 50% 뉴런을 종료시킨다.
 * Underfitting : 학습데이터가 부족하거나 학습이 제대로 이루어지지 않아 훈련집합의 모델이 너무 간단하게 하여 정확도가 낮은 모델   
 
 ### Model Test(Training, Validation, Test)
@@ -88,7 +89,8 @@ hidden layer의 개수를 dense라고 한다. dense의 개수는 2^n개로 설�
 ### ML(Machine Learning) vs. DL(Deep Learning)     
 * ML: Input -> Feature extraction(executed by human) ->  Classification -> Output
 * DL: Input -> Feature extraction + Classification -> Output   
-ML은 hidden layer의 개수가 1개이고, DL은 hidden layer의 개수가 2^n로 설정한다.   
+ML은 hidden layer의 층수가 1층이고, DL은 hidden layer의 층수가 n층으로 설정한다.   
+ImageNet에서 AlexNet이 나오기 전에 비전 알고리즘은 ML을 사용했다. 하지만 AlexNet부터 DL이 사용되었다.
 
 #### Backpropagation   
 Supervised Learning 기반에서 신경망을 학습시키는 방법으로 최적화의 계산 방향이 출력층에서 시작하여 앞으로 진행하는 방법.   
@@ -103,7 +105,12 @@ Supervised Learning 기반에서 신경망을 학습시키는 방법으로 최�
 2. Slow
 3. Overfitting   
 
-Neural Network의 학습방법은 위에서 설명한 Backpropagation을 사용한다. 예를 들어, 아파트를 구매하기 위해서 아파트의 실 거래 값을 알아보았다. 알아본 결과 아파트의 값이 5억인데 인공지능을 연구하는 학자는 호기심에 본인이 설계한 Neural Network에 아파트의 가격을 예측하기 위해서 학습을 시켜봤다. 그런데 큰일나게도 Neural Network는 아파트의 가격을 3억이라고 예측했다. 그러므로 이 문제를 해결하기 위해 인공지능 학자는 Backpropagation을 사용해서 현재 내가 틀린정도를 미분(기울기)해서 뒤로 전달한다. 그런데 backpropagation을 하다보니까 vanishing gradient 현상이 발생하게 된다. vanishing gradient는 레이어가 깊을 수록 업데이트가 사라져가고 그래서 fitting이 잘 안되는 것을 나타낸다(Underfitting). 그렇다면 왜 이런 문제가 발생한 것인가? 학자는 고민해 보았다. 원인을 찾아보니 activation 함수로 sigmoid를 사용하고 있었는데 sigmoid가 -0.5 < x < 0.5에서는 미분이 가능한데 x <= -0.5 와 x >= 0.5 범위에서 미분하면 기울기가 0이 된다. 이 값을 backpropagation하면 중간 node가 0하고 곱해져서 노드가 꺼지게 된다. 결국 backprogation을 할수록 정보가 사라지게 된다!!. 그래서 인공지능 학자들은 이 문제를 해결하기 위해 ReLU(Rectified Linear Units)를 개발하게 되었다. ReLU는 양의 구간에서 전부 미분값(1)이 있다. 
+Neural Network의 학습방법은 위에서 설명한 Backpropagation을 사용한다. 예를 들어, 아파트를 구매하기 위해서 아파트의 실 거래 값을 알아보았다. 알아본 결과 아파트의 값이 5억인데 인공지능을 연구하는 학자는 호기심에 본인이 설계한 Neural Network에 아파트의 가격을 예측하기 위해서 학습을 시켜봤다. 그런데 큰일나게도 Neural Network는 아파트의 가격을 3억이라고 예측했다. 그러므로 이 문제를 해결하기 위해 인공지능 학자는 Backpropagation을 사용해서 현재 내가 틀린정도를 미분(기울기)해서 뒤로 전달했다. 그런데 backpropagation을 하다보니까 vanishing gradient 현상이 발생하게 된다. vanishing gradient는 레이어가 깊을 수록 업데이트가 사라져가고 그래서 fitting이 잘 안되는 것을 나타낸다(Underfitting). 그렇다면 왜 이런 문제가 발생한 것인가? 학자는 고민해 보았다. 원인을 찾아보니 activation 함수로 sigmoid를 사용하고 있었는데 sigmoid가 -0.5 < x < 0.5에서는 미분이 가능한데 x <= -0.5 와 x >= 0.5 범위에서 미분하면 기울기가 0이 된다. 이 값을 backpropagation하면 중간 node가 0하고 곱해져서 노드가 꺼지게 된다. 결국 backprogation을 할수록 정보가 사라지게 된다!!. 그래서 인공지능 학자들은 이 문제를 해결하기 위해 ReLU(Rectified Linear Units)를 개발하게 되었다. ReLU는 양의 구간에서 전부 미분값(1)이 있다.    
+![sigmoid](https://user-images.githubusercontent.com/18206655/89286188-b9408400-d68c-11ea-94fa-8765c655e064.jpg)   
+![relu](https://user-images.githubusercontent.com/18206655/89286209-c1002880-d68c-11ea-9911-7c2d00f6144d.jpg)   
+
+
+
 
 
 
