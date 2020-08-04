@@ -122,7 +122,7 @@ Figure Sigmoid.
 Figure ReLu.   
 
 GD(Gradient Descent)는 현재 가진 weight setting 자리에서 내가 가진 데이터를 다 넣어서 전체 error를 계산한다. 계산된 값을 미분하면 error을 줄이는 방향을 알 수 있다.(내자리의 기울기x반대방향) 하지만 실세계에서 트레이닝 데이터는 몇억건을 넘어간다. 그러면 1 step 이동하기 위해서 매번 몇억건을 넣는 것은 너무나도 비효율적이다. 그래서 GD에서 개선된 optimizer인 SGD(Stochastic Gradient Decent)가 나왔다. GD가 전부다 읽고 나서 최적의 1 step을 가는 것에 비해, SGD는 mini-batch마다 일단 1 step을 간다.     
-<img src="https://user-images.githubusercontent.com/18206655/89286979-14bf4180-d68e-11ea-94f1-c43eb8748299.jpg" width=60%></img>   
+<img src="https://user-images.githubusercontent.com/18206655/89286979-14bf4180-d68e-11ea-94f1-c43eb8748299.jpg" width=60% height=60%></img>   
 현재 가장 많이 사용하는 optimizer는 Adam으로 90% 정도의 정확도를 가진다. 나머지 10% case에서는 다른 optimizer를 사용해봐야 한다. 즉, 잘 모르겠으면 Adam을 사용하자!   
 
 ### CNN vs. RNN or LSTM   
