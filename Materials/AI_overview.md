@@ -15,7 +15,7 @@ Strong AI : 사람처럼 사고
 * 유전자알고리즘
 
 AI가 ML(Machine Learning)을 포함하고, ML이 DL(Deep Learning)을 포함한다. 현재 사회에서는 DL이 인공지능을 실현하는 방법론으로 여겨지고 있다.   
-![AIvsMLvsDL](https://user-images.githubusercontent.com/18206655/89280606-d2910280-d683-11ea-8d40-d39eccb1dc98.jpg)   
+<imge src="https://user-images.githubusercontent.com/18206655/89280606-d2910280-d683-11ea-8d40-d39eccb1dc98.jpg" width=90%></img>
 
 ### 일반 프로그래밍 vs. 머신러닝
 General Programming은 input으로 data, program을 입력하고 그것에 대한 output을 출력하지만, ML에서는 input으로 data, output을 입력하고 그것에 대한output으로 program(model)을 출력한다.   
