@@ -87,7 +87,7 @@ Overfitting 하지 못하도록 Dropout(0.5) 함수를 사용한다. 랜덤하�
 
 ### Deep Learning   
 입력과 출력 사이에 있는 인공 뉴런들을 여러 개로 층층이 쌓고 연결한 인공신경망 기법을 다루는 연구   
-<img src="https://user-images.githubusercontent.com/18206655/89174065-3651f780-d5c0-11ea-86ea-019e0bc9cfc0.jpg" width=70%></img>
+<img src="https://user-images.githubusercontent.com/18206655/89174065-3651f780-d5c0-11ea-86ea-019e0bc9cfc0.jpg" width=70%></img>   
 hidden layer의 개수를 dense라고 한다. dense의 개수는 2^n개로 설정한다.   
 머신러닝 결과는 아래와 같이 3가지 분류로 나타난다.   
 1. 값 회귀(regression) -> output을 그냥 받는다.      
