@@ -35,7 +35,7 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 * Reinforcement Learning : Algorithm learns to react to an environment.
 
 ### 머신러닝 모델 개발 단계   
-원론적인 과정:   
+이론적인 과정:   
 1. 데이터 수집과정
 2. 데이터 가공과정
 3. 데이터 학습 방법 선택
@@ -83,11 +83,11 @@ Overfitting 하지 못하도록 Dropout(0.5) 함수를 사용한다. 랜덤하�
 ### Neural Network   
 뇌의 학습 방법을 수학적으로 모델링하는 기계학습 알고리즘으로써, 시냅스의 결합으로 네트워크를 형성한 신경세포가 학습을 통해 시냅스의 세기를 변화시켜 문제를 해결하는 모델.   
 아래 그림은 Neural Network에서 하나의 component를 보여주고 있다.   
-<img src="https://user-images.githubusercontent.com/18206655/89284486-d1fb6a80-d689-11ea-8b1e-b7160086a951.jpg" width=80%></img>   
+<img src="https://user-images.githubusercontent.com/18206655/89284486-d1fb6a80-d689-11ea-8b1e-b7160086a951.jpg" width=70%></img>   
 
 ### Deep Learning   
 입력과 출력 사이에 있는 인공 뉴런들을 여러 개로 층층이 쌓고 연결한 인공신경망 기법을 다루는 연구   
-![ANN](https://user-images.githubusercontent.com/18206655/89174065-3651f780-d5c0-11ea-86ea-019e0bc9cfc0.jpg)   
+<img src="https://user-images.githubusercontent.com/18206655/89174065-3651f780-d5c0-11ea-86ea-019e0bc9cfc0.jpg" width=70%></img>
 hidden layer의 개수를 dense라고 한다. dense의 개수는 2^n개로 설정한다.   
 머신러닝 결과는 아래와 같이 3가지 분류로 나타난다.   
 1. 값 회귀(regression) -> output을 그냥 받는다.      
@@ -103,12 +103,12 @@ ImageNet에서 AlexNet이 나오기 전에 비전 알고리즘은 ML을 사용�
 
 #### Backpropagation   
 Supervised Learning 기반에서 신경망을 학습시키는 방법으로 최적화의 계산 방향이 출력층에서 시작하여 앞으로 진행하는 방법.   
-<img src="https://user-images.githubusercontent.com/18206655/89175110-0a377600-d5c2-11ea-80b7-f0a7bd4850cb.jpg" width=80%></img>   
+<img src="https://user-images.githubusercontent.com/18206655/89175110-0a377600-d5c2-11ea-80b7-f0a7bd4850cb.jpg" width=70%></img>   
 [Reference link]: https://sebastianraschka.com/faq/docs/visual-backpropagation.html   
 
 #### Gradient descent      
 머신러닝을 식 하나로 표현하자만 y=wx라고 간단하게 표현할 수 있다. w는 weight(가중치)이고, x의 입력 값은 행렬이다. 그러므로 y값을 x로 나눌 수 없다. 식을 변형해서 0=wx-y와 같은 형태를 사용해서 비용함수가 0이 되는 값을 구한다. 비용을 0으로 만들어 주는게 gradient descent이다. gradient descent는 MSE(Mean Square Error)를 사용해서 비용함수가 0이 되도록 predictive 선형그래프를 real 선형그래프로 이동시키는 과정을 학습이라고 할 수 있다. 엄밀히 gradient descent를 다시 정의하자만 오차의 최소값 위치를 찾기 위해 Cost Function의 gradient 반대 방향으로 정의한 step size를 가지고 조금씩 움직여 가면서 최적의 parameter(weight)를 찾는 최적화 알고리즘이라고 할 수 있다.     
-<img src="https://user-images.githubusercontent.com/18206655/89286574-6e733c00-d68d-11ea-9839-c5b4eac93b65.jpg" width=80%></img>   
+<img src="https://user-images.githubusercontent.com/18206655/89286574-6e733c00-d68d-11ea-9839-c5b4eac93b65.jpg" width=70%></img>   
 
 ### Machine Learning의 문제점   
 1. Underfitting
@@ -118,11 +118,11 @@ Supervised Learning 기반에서 신경망을 학습시키는 방법으로 최�
 Neural Network의 학습방법은 위에서 설명한 Backpropagation을 사용한다. 예를 들어, 아파트를 구매하기 위해서 아파트의 실 거래 값을 알아보았다. 알아본 결과 아파트의 값이 5억인데 인공지능을 연구하는 학자는 호기심에 본인이 설계한 Neural Network에 아파트의 가격을 예측하기 위해서 학습을 시켜봤다. 그런데 큰일나게도 Neural Network는 아파트의 가격을 3억이라고 예측했다. 그러므로 이 문제를 해결하기 위해 인공지능 학자는 Backpropagation을 사용해서 현재 내가 틀린정도를 미분(기울기)해서 뒤로 전달했다. 그런데 backpropagation을 하다보니까 vanishing gradient 현상이 발생하게 된다. vanishing gradient는 레이어가 깊을 수록 업데이트가 사라져가고 그래서 fitting이 잘 안되는 것을 나타낸다(Underfitting). 그렇다면 왜 이런 문제가 발생한 것인가? 학자는 고민해 보았다. 원인을 찾아보니 activation 함수로 sigmoid를 사용하고 있었는데 sigmoid가 -0.5 < x < 0.5에서는 미분이 가능한데 x <= -0.5 와 x >= 0.5 범위에서 미분하면 기울기가 0이 된다. 이 값을 backpropagation하면 중간 node가 0하고 곱해져서 노드가 꺼지게 된다. 결국 backprogation을 할수록 정보가 사라지게 된다!!. 그래서 인공지능 학자들은 이 문제를 해결하기 위해 ReLU(Rectified Linear Units)를 개발하게 되었다. ReLU는 양의 구간에서 전부 미분값(1)이 있다.       
 <img src="https://user-images.githubusercontent.com/18206655/89286188-b9408400-d68c-11ea-94fa-8765c655e064.jpg" width=80%></img>   
 Figure Sigmoid.     
-<img src="https://user-images.githubusercontent.com/18206655/89286209-c1002880-d68c-11ea-9911-7c2d00f6144d.jpg" width=80%></img>   
+<img src="https://user-images.githubusercontent.com/18206655/89286209-c1002880-d68c-11ea-9911-7c2d00f6144d.jpg" width=70%></img>   
 Figure ReLu.   
 
 GD(Gradient Descent)는 현재 가진 weight setting 자리에서 내가 가진 데이터를 다 넣어서 전체 error를 계산한다. 계산된 값을 미분하면 error을 줄이는 방향을 알 수 있다.(내자리의 기울기x반대방향) 하지만 실세계에서 트레이닝 데이터는 몇억건을 넘어간다. 그러면 1 step 이동하기 위해서 매번 몇억건을 넣는 것은 너무나도 비효율적이다. 그래서 GD에서 개선된 optimizer인 SGD(Stochastic Gradient Decent)가 나왔다. GD가 전부다 읽고 나서 최적의 1 step을 가는 것에 비해, SGD는 mini-batch마다 일단 1 step을 간다.     
-<img src="https://user-images.githubusercontent.com/18206655/89286979-14bf4180-d68e-11ea-94f1-c43eb8748299.jpg" width=80%></img>   
+<img src="https://user-images.githubusercontent.com/18206655/89286979-14bf4180-d68e-11ea-94f1-c43eb8748299.jpg" width=60%></img>   
 현재 가장 많이 사용하는 optimizer는 Adam으로 90% 정도의 정확도를 가진다. 나머지 10% case에서는 다른 optimizer를 사용해봐야 한다. 즉, 잘 모르겠으면 Adam을 사용하자!   
 
 ### CNN vs. RNN or LSTM   
