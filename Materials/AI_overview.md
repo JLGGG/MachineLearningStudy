@@ -35,20 +35,29 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 * Reinforcement Learning : Algorithm learns to react to an environment.
 
 ### 머신러닝 모델 개발 단계   
+원론적인 과정:   
 1. 데이터 수집과정
 2. 데이터 가공과정
 3. 데이터 학습 방법 선택
 4. 매개변수 조정
 5. 머신러닝 모델 학습
 6. 머신러닝 모델 개발   
-3~5 과정이 데이터 학습 과정이다. 머신러닝 모델을 개발하고 학습하는 시간보다 데이터를 전처리하는데 훨씬 더 많은 시간이 소요된다.
+3~5 과정이 데이터 학습 과정이다. 머신러닝 모델을 개발하고 학습하는 시간보다 데이터를 전처리하는데 훨씬 더 많은 시간이 소요된다.   
+
+실제 개발할 때 과정:   
+1. 데이터 전처리: Pandas를 사용해서 데이터를 가공하고(데이터에 문자열이 있으면 안된다. 오로지 숫자만!), 가공된 데이터를 Numpy를 사용해서 Numpy 배열로 만든다.(train data 80%, test data 20%), 단위 dataFrame(df)
+2. 모델설계: DNN, CNN(Image), RNN(Sequence), 몇층?, 뉴런의 수?
+3. 모델훈련: model.fit(훈련 데이터 x, 훈련 데이터 y, ...) -> 훈련 정확도
+4. 모델평가: model.evaluate(테스트 데이터 x, 테스트 데이터 y) -> 테스트 정확도
+5. 모델예측: model.predict(새로운 데이터 x)   
+* 알고리즘보다 중요한게 데이터 전처리이다
 
 ### 머신러닝 모델 활용 단계   
 실제 데이터와 개발된 머신러닝 모델을 실행해서 분류/결과값 도출 or 예측결과를 도출한다.
 
 #### The curse of dimensionality   
 입력변수의 차원이 증가할수록, 공간의 부피가 기하급수적으로 증가하고 데이터는 공간에 희소해져 데이터의 분포 분석이나 모델 추정에 필요한 샘플 데이터 개수가 기하급수적으로 증가.
-![cod](https://user-images.githubusercontent.com/18206655/89172882-5385c680-d5be-11ea-87df-eb9b3419a1e6.jpg)
+<img src="https://user-images.githubusercontent.com/18206655/89172882-5385c680-d5be-11ea-87df-eb9b3419a1e6.jpg" width=90%></img>
 
 #### Overfitting and Underfitting   
 * Overfitting : 정확한 결과를 얻기 위해 학습데이터의 잡음까지 학습하여 훈련데이터에 최적화되어 있지만 일반화하지 못한 모델.   
@@ -121,13 +130,7 @@ GD(Gradient Descent)는 현재 가진 weight setting 자리에서 내가 가진 
 [CNN Reference Link]: https://cezannec.github.io/Convolutional_Neural_Networks/   
 RNN은 내부적으로 sigmoid를 사용하고 있어서 backpropagation중에 vanishing gradient가 발생한다. 그래서 RNN은 학문적으로만 사용하고, 실제 산업계에서는 LSTM을 사용한다. LSTM은 RNN처럼 backpropagation할 때 데이터가 사라지지 않도록 메모리에 데이터를 저장한다.   
 
-### ML, DL 모델 개발   
-1. 데이터 전처리: Pandas를 사용해서 데이터를 가공하고(데이터에 문자열이 있으면 안된다. 오로지 숫자만!), 가공된 데이터를 Numpy를 사용해서 Numpy 배열로 만든다.(train data 80%, test data 20%), 
-2. 모델설계: DNN, CNN(Image), RNN(Sequence), 몇층?, 뉴런의 수?
-3. 모델훈련: model.fit(훈련 데이터 x, 훈련 데이터 y, ...) -> 훈련 정확도
-4. 모델평가: model.evaluate(테스트 데이터 x, 테스트 데이터 y) -> 테스트 정확도
-5. 모델예측: model.predict(새로운 데이터 x)   
-* 알고리즘보다 중요한게 데이터 전처리이다. 
+
 
 
 
