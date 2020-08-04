@@ -19,6 +19,7 @@ AI가 ML(Machine Learning)을 포함하고, ML이 DL(Deep Learning)을 포함한
 
 ### 일반 프로그래밍 vs. 머신러닝
 General Programming은 input으로 data, program을 입력하고 그것에 대한 output을 출력하지만, ML에서는 input으로 data, output을 입력하고 그것에 대한output으로 program(model)을 출력한다.   
+기존의 코딩 방법이 조건을 라인바이라인으로 긴 코드로 써내려 갔다면(if-else 지옥!) 머신러닝의 코딩 방법은 조건을 학습 모델의 여러 가중치로 변환하는 일이다.
 
 ### 머신러닝의 3대 원리
 * Occam's Razor   
@@ -71,6 +72,8 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 
 ### Neural Network   
 뇌의 학습 방법을 수학적으로 모델링하는 기계학습 알고리즘으로써, 시냅스의 결합으로 네트워크를 형성한 신경세포가 학습을 통해 시냅스의 세기를 변화시켜 문제를 해결하는 모델.   
+아래 그림은 Neural Network에서 하나의 component를 보여주고 있다.   
+![neuralnet](https://user-images.githubusercontent.com/18206655/89284486-d1fb6a80-d689-11ea-8b1e-b7160086a951.jpg)  
 
 ### Deep Learning   
 입력과 출력 사이에 있는 인공 뉴런들을 여러 개로 층층이 쌓고 연결한 인공신경망 기법을 다루는 연구   
@@ -85,7 +88,7 @@ hidden layer의 개수를 dense라고 한다. dense의 개수는 2^n개로 설�
 ### ML(Machine Learning) vs. DL(Deep Learning)     
 * ML: Input -> Feature extraction(executed by human) ->  Classification -> Output
 * DL: Input -> Feature extraction + Classification -> Output   
-
+ML은 hidden layer의 개수가 1개이고, DL은 hidden layer의 개수가 2^n로 설정한다.   
 
 #### Backpropagation   
 Supervised Learning 기반에서 신경망을 학습시키는 방법으로 최적화의 계산 방향이 출력층에서 시작하여 앞으로 진행하는 방법.   
@@ -93,7 +96,14 @@ Supervised Learning 기반에서 신경망을 학습시키는 방법으로 최�
 [Reference link]: https://sebastianraschka.com/faq/docs/visual-backpropagation.html   
 
 #### Gradient descent      
-머신러닝을 식 하나로 표현하자만 y=wx라고 간단하게 표현할 수 있다. w는 weight(가중치)이고, x는 입력 값은 행렬이다. 그러기 때문에 y값을 x로 나눌 수 없다. 그러므로 0=wx-y을 사용해서 비용함수가 0이되는 값을 구한다. 비용을 0으로 만들어 주는게 gradient descent이다. gradient descent는 MSE(Mean Square Error)를 사용해서 비용함수가 0이 되도록 예측 선형그래프를 원형 선형그래프로 이동시키는 과정을 학습이라고 할 수 있다. 엄밀히 gradient descent를 다시 정의하자만 오차의 최소값 위치를 찾기 위해 Cost Function의 gradient 반대 방향으로 정의한 step size를 가지고 조금씩 움직여 가면서 최적의 parameter(weight)를 찾는 최적화 알고리즘이라고 할 수 있다.
+머신러닝을 식 하나로 표현하자만 y=wx라고 간단하게 표현할 수 있다. w는 weight(가중치)이고, x의 입력 값은 행렬이다. 그러므로 y값을 x로 나눌 수 없다. 식을 변형해서 0=wx-y와 같은 형태를 사용해서 비용함수가 0이 되는 값을 구한다. 비용을 0으로 만들어 주는게 gradient descent이다. gradient descent는 MSE(Mean Square Error)를 사용해서 비용함수가 0이 되도록 predictive 선형그래프를 real 선형그래프로 이동시키는 과정을 학습이라고 할 수 있다. 엄밀히 gradient descent를 다시 정의하자만 오차의 최소값 위치를 찾기 위해 Cost Function의 gradient 반대 방향으로 정의한 step size를 가지고 조금씩 움직여 가면서 최적의 parameter(weight)를 찾는 최적화 알고리즘이라고 할 수 있다.   
+
+### Machine Learning의 문제점   
+1. Underfitting
+2. Slow
+3. Overfitting   
+
+
 
 
 
