@@ -75,6 +75,12 @@ General Programming은 input으로 data, program을 입력하고 그것에 대�
 ### Deep Learning   
 입력과 출력 사이에 있는 인공 뉴런들을 여러 개로 층층이 쌓고 연결한 인공신경망 기법을 다루는 연구   
 ![ANN](https://user-images.githubusercontent.com/18206655/89174065-3651f780-d5c0-11ea-86ea-019e0bc9cfc0.jpg)   
+hidden layer의 개수를 dense라고 한다. dense의 개수는 2^n개로 설정한다.   
+머신러닝 결과는 아래와 같이 3가지 분류로 나타난다.   
+1. 값 회귀(regression)   
+2. 이진분류(true or false)
+3. 다중분류(Ex. 개, 고양이, 호랑이, 사자등을 구분하는 방법등)   
+그렇다면 우리가 자주듣는 자율 주행 자동차는 output으로 어떠한 값이 나올까? 자율 주행 자동차는 2가지 output만 필요하다. accelator와 break를 이용한 속도 제어와 direction에 대한 output만이 필요하다.(생각외로 output은 간단한다?!)    
 
 ### ML(Machine Learning) vs. DL(Deep Learning)     
 * ML: Input -> Feature extraction(executed by human) ->  Classification -> Output
